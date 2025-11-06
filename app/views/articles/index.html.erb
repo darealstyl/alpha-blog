@@ -1,0 +1,29 @@
+<div style="padding: 10px">
+    <h1>Articles</h1>
+
+    <table style="padding: 5px">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Title </th>
+                <th>Description </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        
+    
+        <% @articles.each do |item| %>
+            <tbody>
+                <tr>
+                    <td style="text-align: left"><%= item.id %></td>
+                    <td style="text-align: left"><%= item.title %></td>
+                    <td style="text-align: left"><%= item.description %></td>
+                    <td>Placeholder</td>
+                    <% # <button></button> %>
+            </tr>
+            </tbody> 
+        <% end %>
+    
+    </table>
+
+</div>
