@@ -1,19 +1,22 @@
-# render.yaml
+version: "1"
+
 services:
   - type: web
     name: alpha-blog
     runtime: ruby
-    plan: free           # use starter/standard+ to enable preDeployCommand
-    buildCommand: "./bin/render-build.sh"
-    # preDeployCommand: "bin/rails db:migrate"   # uncomment if you upgrade off Free
-    startCommand: "./bin/rails server"
+    plan: free
+    buildCommand: "bash ./bin/render-build.sh"
+    # Prefer Puma in prod:
+    startCommand: "bundle exec puma -C config/puma.rb"
+    # If you really want rails server instead:
+    # startCommand: "bundle exec rails server -b 0.0.0.0 -p ${PORT:-3000}"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
           name: alpha-blog-db
           property: connectionString
       - key: RAILS_MASTER_KEY
-        sync: false   # you’ll paste this during Blueprint creation
+        sync: false
       - key: WEB_CONCURRENCY
         value: "2"
 
