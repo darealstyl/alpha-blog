@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -o errexit
+
 bundle install
-bin/rails assets:precompile
-bin/rails assets:clean
-# Keep this here on Free; move it to preDeployCommand once you’re on a paid plan:
-bin/rails db:migrate
+bundle exec rails assets:precompile
+bundle exec rails assets:clean
+# keep migrations here if you're on the Free plan
+bundle exec rails db:migrate
