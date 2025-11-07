@@ -1,11 +1,12 @@
+version: "1"   # ✅ This enables support for releaseCommand and more
+
 services:
   - type: web
     name: alpha-blog
     env: ruby
-    region: oregon
     buildCommand: bundle install && bundle exec rails assets:precompile
     startCommand: bundle exec puma -C config/puma.rb
-    plan: free
+    releaseCommand: bundle exec rails db:migrate   # now valid ✅
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -13,9 +14,6 @@ services:
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
-    releaseCommand: bundle exec rails db:migrate
 
 databases:
   - name: alpha-blog-db
-    region: oregon
-    plan: free
