@@ -1,4 +1,24 @@
-<h1>This is the home page</h1>
+<section
+  class="hero hero-parallax container border rounded"
+  style="background-image: url('<%= image_path("hero.jpeg") %>')"
+>
+  <div
+    class="d-flex flex-column justify-content-center align-items-center"
+    style="height: 40vh;"
+  >
+    <h1 class="display-4 text-black fw-bold logo">ALPHA-BLOG</h1>
+    <p class="lead text-black-50">Your tagline</p>
+  </div>
+</section>
 
-<%= link_to "Articles Listing", articles_path %> | 
-<%= link_to "Link to About Page", about_path %>
+<div class="">
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <h2>Welcome to the ALPHA-BLOG</h2>
+    <p>Here, you can create any text post you can imagine.</p>
+  </div>
+  <div class="d-flex flex-row justify-content-center align-items-center">
+    <a href="/articles" class="btn btn-primary">Articles</a>
+    |
+    <a href="/about" class="btn btn-outline-primary">About</a>
+  </div>
+</div>

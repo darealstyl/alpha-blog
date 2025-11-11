@@ -1,1 +1,24 @@
 @import "bootstrap";
+
+
+.navbar {
+    background-color: black !important;
+}
+
+.navbar .nav-link {
+    color: #bebebe;
+}
+
+.navbar .navbar-brand {
+    color: white;
+}
+
+
+.navbar .nav-link:hover,
+.navbar .navbar-brand:focus {
+    color: white;
+}
+
+.navbar .nav-link.active {
+    color: white;
+}

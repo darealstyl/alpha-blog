@@ -1,0 +1,44 @@
+.hero {
+  position: relative;
+  min-height: 50vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 20px;
+  /* max-width: 90%;
+  left: 5%; */
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0);
+}
+
+.hero-parallax {
+  background-attachment: fixed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-parallax {
+    background-attachment: scroll;
+  }
+}
+
+.logo {
+  letter-spacing: -0.4rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  height: 50vh;
+  /* margin: auto; */
+}
+
+.container {
+  max-width: 90%;
+}
