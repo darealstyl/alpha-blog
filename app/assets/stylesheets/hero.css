@@ -17,7 +17,7 @@
 }
 
 .hero-parallax {
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -41,4 +41,9 @@
 
 .container {
   max-width: 90%;
+}
+
+.page-content {
+  flex: 1 0 auto;
+  background-color: rgb(238, 238, 238);
 }
