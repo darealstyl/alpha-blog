@@ -1,4 +1,5 @@
-<h1>New Article</h1>
-<%= link_to "Back to Articles", articles_path, method: :get %>
+<h1 class="text-center mt-4">New Article</h1>
 
-<%= render "articles/form" %>
+<div class="container">
+  <%= render "form", article: @article %>
+</div>

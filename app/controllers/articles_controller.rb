@@ -9,6 +9,7 @@ class ArticlesController < ApplicationController
   end
 
   def new
+    # raise "NEW ACTION CALLED"
     @article = Article.new
   end
 
@@ -21,7 +22,9 @@ class ArticlesController < ApplicationController
       flash[:notice] = "Article was created succesfully."
       redirect_to @article
     else
-      render "new"
+      Rails.logger.debug "ARTICLE OBJECT_ID: #{@article.object_id}"
+      Rails.logger.debug "ARTICLE ERRORS: #{@article.errors.full_messages.inspect}"
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -30,7 +33,9 @@ class ArticlesController < ApplicationController
       flash[:notice] = "Article was updated successfully."
       redirect_to @article
     else
-      render "edit"
+      Rails.logger.debug "ARTICLE OBJECT_ID: #{@article.object_id}"
+      Rails.logger.debug "ARTICLE ERRORS: #{@article.errors.full_messages.inspect}"
+      render :edit, status: :unprocessable_entity
     end
   end
 
