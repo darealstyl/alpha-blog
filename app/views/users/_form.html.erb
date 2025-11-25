@@ -5,28 +5,28 @@
       <%= form_with(model: @user, class: "bg-info p-3 rounded shadow mb-3", local: true) do |f| %>
 
         <div class="form-group row mb-3">
-          <%= f.label :username, class: "col-2 col-form-label text-light" %>
-          <div class="col-10">
+          <%= f.label :username, class: "col-sm-2 col-form-label text-light" %>
+          <div class="col-sm-10">
             <%= f.text_field :username,
-                         class: "form-control",
-                         placeholder: "Username goes here..." %>
+                             class: "form-control",
+                             placeholder: "Username goes here..." %>
           </div>
         </div>
         <div class="form-group row mb-3">
-          <%= f.label :email, class: "col-2 col-form-label text-light" %>
-          <div class="col-10">
+          <%= f.label :email, class: "col-sm-2 col-form-label text-light" %>
+          <div class="col-sm-10">
             <%= f.email_field :email, class: "form-control", placeholder: "example@gmail.com" %>
           </div>
         </div>
         <div class="form-group row mb-3">
-          <%= f.label :password, class: "col-2 col-form-label text-light" %>
-          <div class="col-10">
+          <%= f.label :password, class: "col-sm-2 col-form-label text-light" %>
+          <div class="col-sm-10">
             <%= f.password_field :password, class: "form-control", placeholder: "************" %>
           </div>
         </div>
 
         <div class="form-group row mb-3 justify-content-center">
-          <%= f.submit "Sign Up", class: "btn btn-outline-light btn-lg w-25" %>
+          <%= f.submit "Sign Up", class: "btn btn-outline-light btn-lg w-50" %>
         </div>
       <% end %>
 
@@ -34,8 +34,8 @@
   </div>
   <div class="row text-center">
     <%= link_to "[ Back to Articles ]",
-    articles_path,
-    method: :get,
-    class: "text-info mb-3" %>
+                articles_path,
+                method: :get,
+                class: "text-info mb-3" %>
   </div>
 </div>

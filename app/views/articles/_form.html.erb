@@ -5,19 +5,19 @@
       <%= form_with(model: @article, class: "bg-info p-3 rounded shadow mb-3", local: true) do |f| %>
 
         <div class="form-group row mb-3">
-          <%= f.label :title, class: "col-2 col-form-label text-light" %>
-          <div class="col-10">
+          <%= f.label :title, class: "col-sm-2 col-form-label text-light" %>
+          <div class="col-sm-10">
             <%= f.text_field :title, class: "form-control", placeholder: "Title goes here..." %>
           </div>
         </div>
         <div class="form-group row mb-3">
-          <%= f.label :description, class: " col-2 col-form-label text-light" %>
-          <div class="col-10">
+          <%= f.label :description, class: " col-sm-2 col-form-label text-light" %>
+          <div class="col-sm-10">
             <%= f.text_area :description, rows: 10, class: "form-control" %>
           </div>
         </div>
         <div class="form-group row mb-3 justify-content-center">
-          <%= f.submit class: "btn btn-outline-light btn-lg w-25" %>
+          <%= f.submit class: "btn btn-outline-light btn-lg w-50" %>
         </div>
       <% end %>
 
@@ -25,8 +25,8 @@
   </div>
   <div class="row text-center">
     <%= link_to "[ Back to Articles ]",
-    articles_path,
-    method: :get,
-    class: "text-info mb-3" %>
+                articles_path,
+                method: :get,
+                class: "text-info mb-3" %>
   </div>
 </div>
