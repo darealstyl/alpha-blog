@@ -8,8 +8,8 @@
           <%= f.label :username, class: "col-2 col-form-label text-light" %>
           <div class="col-10">
             <%= f.text_field :username,
-                             class: "form-control",
-                             placeholder: "Username goes here..." %>
+                         class: "form-control",
+                         placeholder: "Username goes here..." %>
           </div>
         </div>
         <div class="form-group row mb-3">
@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-group row mb-3 justify-content-center">
-          <%= f.submit class: "btn btn-outline-light btn-lg w-25" %>
+          <%= f.submit "Sign Up", class: "btn btn-outline-light btn-lg w-25" %>
         </div>
       <% end %>
 
@@ -34,8 +34,8 @@
   </div>
   <div class="row text-center">
     <%= link_to "[ Back to Articles ]",
-                articles_path,
-                method: :get,
-                class: "text-info mb-3" %>
+    articles_path,
+    method: :get,
+    class: "text-info mb-3" %>
   </div>
 </div>
