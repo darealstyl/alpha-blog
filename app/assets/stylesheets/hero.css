@@ -9,12 +9,12 @@
   left: 5%; */
 }
 
-.hero::after {
+/* .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(255, 255, 255, 0);
-}
+} */
 
 .hero-parallax {
   /* background-attachment: fixed; */
