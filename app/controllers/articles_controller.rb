@@ -18,12 +18,11 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user = User.first
     if @article.save
       flash[:notice] = "Article was created succesfully."
       redirect_to @article
     else
-      Rails.logger.debug "ARTICLE OBJECT_ID: #{@article.object_id}"
-      Rails.logger.debug "ARTICLE ERRORS: #{@article.errors.full_messages.inspect}"
       render :new, status: :unprocessable_entity
     end
   end
@@ -33,8 +32,6 @@ class ArticlesController < ApplicationController
       flash[:notice] = "Article was updated successfully."
       redirect_to @article
     else
-      Rails.logger.debug "ARTICLE OBJECT_ID: #{@article.object_id}"
-      Rails.logger.debug "ARTICLE ERRORS: #{@article.errors.full_messages.inspect}"
       render :edit, status: :unprocessable_entity
     end
   end
