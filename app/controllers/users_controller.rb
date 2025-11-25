@@ -25,6 +25,12 @@ class UsersController < ApplicationController
   end
 
   def update
+    if @user.update(user_params)
+      flash[:notice] = "Your profile was updated successfully."
+      redirect_to @user
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
