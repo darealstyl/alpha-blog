@@ -1,14 +1,14 @@
 <div class="container">
-  <h2 class="text-center mt-4"></h2>
+  <h2 class="text-center mt-4"><%= @user.username %>'s profile</h2>
+    <%= gravatar_for @user, size: 200 %>
 
+    <h3 class="text-center mt-4">Articles</h3>
   <div class="row justify-content-center text-center">
     <div class="col-8 mt-4">
+    
 
-      <%= @user.username %>
-      <%= @user.email %>
-      <%= @user.password %>
-
-      <%= link_to "[ Back to Articles ]", articles_path, method: :get, class: "text-info" %>
+      
     </div>
+    <%= link_to "[ Back to Articles ]", articles_path, method: :get, class: "text-info" %>
   </div>
 </div>
