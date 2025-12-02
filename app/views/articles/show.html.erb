@@ -7,23 +7,23 @@
       <div class="card text-center shadow mb-5">
         <div class="card-header fst-italic">
           by
-          <%= @article.user.username if @article.user %> 
+          <%= @article.user.username if @article.user %>
           <%= link_to gravatar_for(@article.user), user_path(@article.user) %>
         </div>
         <div class="card-body">
           <div class="card-text text-left"><%= simple_format(@article.description) %></div>
           <div class="d-flex justify-content-center">
             <%= button_to "Edit",
-                          edit_article_path(@article),
-                          method: :get,
-                          class: "btn btn-outline-primary mx-1" %>
+            edit_article_path(@article),
+            method: :get,
+            class: "btn btn-outline-primary mx-1" %>
             <%= button_to "Delete",
-                          article_path(@article),
-                          method: :delete,
-                          form: {
-                            onsubmit: "return confirm('Are you sure?')",
-                          },
-                          class: "btn btn-outline-danger mx-1" %>
+            article_path(@article),
+            method: :delete,
+            form: {
+              onsubmit: "return confirm('Are you sure?')",
+            },
+            class: "btn btn-outline-danger mx-1" %>
           </div>
         </div>
         <div class="card-footer text-body-secondary">
