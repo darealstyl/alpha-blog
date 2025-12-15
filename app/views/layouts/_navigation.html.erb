@@ -33,30 +33,44 @@
           </a>
           <ul class="dropdown-menu">
             <% if logged_in? %>
-            <%= link_to "Create new article", new_article_path, class: "dropdown-item" %>
+              <%= link_to "Create new article", new_article_path, class: "dropdown-item" %>
             <% end %>
             <%= link_to "View articles", articles_path, class: "dropdown-item" %>
           </ul>
         </li>
         <% if logged_in? %>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href=""
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <%= current_user.username %>
-          </a>
-          <ul class="dropdown-menu">
-            <%= button_to "Profile",
-                          user_path(current_user),
-                          class: "dropdown-item",
-                          method: :get %>
-            <%= button_to "Logout", logout_path, class: "dropdown-item", method: :delete %>
-          </ul>
-        </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href=""
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <%= current_user.username %>
+            </a>
+            <ul class="dropdown-menu">
+              <%= button_to "View Profile",
+                            user_path(current_user),
+                            class: "dropdown-item",
+                            method: :get %>
+              <%= button_to "Edit Profile",
+                            edit_user_path(current_user),
+                            class: "dropdown-item",
+                            method: :get %>
+              <%= button_to "Delete Profile",
+                            user_path(current_user),
+                            class: "dropdown-item text-danger",
+                            method: :delete,
+                            form: {
+                              onsubmit: "return confirm('Are you sure?')",
+                            } %>
+
+            </ul>
+          </li>
+          <li class="nav-item">
+            <%= button_to "Logout", logout_path, class: "nav-link", method: :delete %>
+          </li>
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", login_path, class: "nav-link" %>
