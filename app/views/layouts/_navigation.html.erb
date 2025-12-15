@@ -3,7 +3,7 @@
   data-bs-theme="dark"
 >
   <div class="container-fluid">
-    <%# <a class="navbar-brand" href="/">ALPHA-BLOG</a> %>
+    <% # <a class="navbar-brand" href="/">ALPHA-BLOG</a> %>
     <%= link_to "ALPHA-BLOG", root_path, class: "navbar-brand" %>
     <button
       class="navbar-toggler"
@@ -32,21 +32,31 @@
             Articles
           </a>
           <ul class="dropdown-menu">
+            <% if logged_in? %>
             <%= link_to "Create new article", new_article_path, class: "dropdown-item" %>
+            <% end %>
             <%= link_to "View articles", articles_path, class: "dropdown-item" %>
           </ul>
         </li>
         <% if logged_in? %>
-          <li class="nav-item">
-            <%= button_to current_user.username,
-            user_path(current_user),
-            class: "nav-link",
-            method: :get %>
-          </li>
-          <li class="nav-item">
-            <%= button_to "Logout", logout_path, class: "nav-link", method: :delete %>
-          </li>
-
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href=""
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <%= current_user.username %>
+          </a>
+          <ul class="dropdown-menu">
+            <%= button_to "Profile",
+                          user_path(current_user),
+                          class: "dropdown-item",
+                          method: :get %>
+            <%= button_to "Logout", logout_path, class: "dropdown-item", method: :delete %>
+          </ul>
+        </li>
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", login_path, class: "nav-link" %>
