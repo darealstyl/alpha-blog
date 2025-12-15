@@ -26,10 +26,12 @@
                             user,
                             method: :get,
                             class: "btn btn-outline-success m-1" %>
+              <% if logged_in? && user == current_user %>
               <%= button_to "Edit Profile",
                             edit_user_path(user),
                             method: :get,
                             class: "btn btn-outline-primary m-1" %>
+              <% end %>
               <%# <%= button_to "Delete",
                             article_path(article),
                             method: :delete,
