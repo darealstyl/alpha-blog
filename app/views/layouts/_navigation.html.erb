@@ -3,7 +3,7 @@
   data-bs-theme="dark"
 >
   <div class="container-fluid">
-    <% # <a class="navbar-brand" href="/">ALPHA-BLOG</a> %>
+    <%# <a class="navbar-brand" href="/">ALPHA-BLOG</a> %>
     <%= link_to "ALPHA-BLOG", root_path, class: "navbar-brand" %>
     <button
       class="navbar-toggler"
@@ -47,24 +47,25 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
+              <%= "[Admin]" if current_user.admin? %>
               <%= current_user.username %>
             </a>
             <ul class="dropdown-menu">
               <%= button_to "View Profile",
-                            user_path(current_user),
-                            class: "dropdown-item",
-                            method: :get %>
+              user_path(current_user),
+              class: "dropdown-item",
+              method: :get %>
               <%= button_to "Edit Profile",
-                            edit_user_path(current_user),
-                            class: "dropdown-item",
-                            method: :get %>
+              edit_user_path(current_user),
+              class: "dropdown-item",
+              method: :get %>
               <%= button_to "Delete Profile",
-                            user_path(current_user),
-                            class: "dropdown-item text-danger",
-                            method: :delete,
-                            form: {
-                              onsubmit: "return confirm('Are you sure?')",
-                            } %>
+              user_path(current_user),
+              class: "dropdown-item text-danger",
+              method: :delete,
+              form: {
+                onsubmit: "return confirm('Are you sure?')",
+              } %>
 
             </ul>
           </li>

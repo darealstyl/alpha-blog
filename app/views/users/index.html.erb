@@ -26,19 +26,19 @@
                             user,
                             method: :get,
                             class: "btn btn-outline-success m-1" %>
-              <% if logged_in? && user == current_user %>
+              <% if logged_in? %>
+               <% if user == current_user %>
               <%= button_to "Edit Profile",
                             edit_user_path(user),
                             method: :get,
                             class: "btn btn-outline-primary m-1" %>
+                <% end %>
+                <% if current_user.admin? %>
+                  <%= button_to "Delete User", user_path(user), method: :delete, class: "btn btn-outline-danger m-1", form: {
+                                                                  onsubmit: "return confirm('Are you sure? You are attempting to delete #{user.username}')",
+                                                                } %>
+                  <% end %>
               <% end %>
-              <%# <%= button_to "Delete",
-                            article_path(article),
-                            method: :delete,
-                            form: {
-                              onsubmit: "return confirm('Are you sure?')",
-                            },
-                            class: "btn btn-outline-danger m-1" %>
             </div>
           </div>
           <div class="card-footer text-body-secondary">
