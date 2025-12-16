@@ -1,6 +1,10 @@
 <div class="container my-0 py-0">
   <% flash.each do |name, msg| %>
+    <% if flash[:notice] %>
     <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <% elsif flash[:alert] %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <% end %>
       <%= msg %>
       <button
         type="button"
