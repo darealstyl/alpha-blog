@@ -1,30 +1,31 @@
 <div class="page-content">
   <div
-    class="hero hero-parallax container border rounded"
+    class="hero hero-parallax container border rounded shadow-lg mt-5"
     style="background-image: url('<%= image_path("hero3.jpg") %>')"
   >
     <div
       class="d-flex flex-column justify-content-center align-items-center"
       style="height: 40vh;"
     >
-      <h1 class="display-4 text-white fw-bold logo">ALPHA-BLOG</h1>
-      <%# <p class="lead text-white-50">Your tagline</p> %>
+      <h1 class="display-4 text-white fw-bold logo mt-5">ALPHA-BLOG</h1>
+      <% # <p class="lead text-white-50">Your tagline</p> %>
       <%= button_to "Sign Up!", signup_path, method: :get, class: "btn btn-success btn-lg" %>
+
+      <h5 class="text-light mt-5">Sign up to create text posts!</h5>
 
     </div>
 
   </div>
 
-  <div class="">
+  <%# <div class="">
     <div class="d-flex flex-column justify-content-center align-items-center">
       <h2>Welcome to the ALPHA-BLOG</h2>
       <p>Here, you can create any text post you can imagine.</p>
     </div>
     <div class="d-flex flex-row justify-content-center align-items-center">
-      <a href="/articles" class="btn btn-primary">Articles</a>
-      |
-      <a href="/about" class="btn btn-outline-primary">About</a>
+      <a href="/articles" class="btn btn-primary btn-lg mx-1">Articles</a>
+      <a href="/about" class="btn btn-outline-primary btn-lg mx-1">About</a>
     </div>
-  </div>
+  </div> %>
 
 </div>
