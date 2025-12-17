@@ -4,10 +4,23 @@
 
       <div class="card text-center shadow mb-5">
         <div class="card-header fst-italic">
-          <% if article.user %>
-            by
-            <%= link_to article.user.username, user_path(article.user) %>
-          <% end %>
+          <div>
+            <% if article.user %>
+              by
+              <%= link_to article.user.username, user_path(article.user) %>
+            <% end %>
+          </div>
+          <div class="d-inline-flex">
+            <% if article.categories.any? %>
+              <% article.categories.each do |category| %>
+                <div class="badge rounded-pill bg-info px-2 mt-2 mx-1">
+                  <%= link_to category.name,
+                  category,
+                  class: "text-light fw-bold text-decoration-none" %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
         </div>
         <div class="card-body">
           <h5 class="card-title">
