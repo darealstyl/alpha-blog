@@ -9,8 +9,7 @@ Alpha Blog is a Ruby on Rails blogging platform with role-based access (regular 
 ## Screenshots
 
 - Home: `docs/home.png`
-- Post editor: `docs/editor.png`
-- Admin dashboard: `docs/admin.png`
+- Post editor: `docs/create_article.png`
 
 ## Features
 - User authentication (signup, login, logout)
