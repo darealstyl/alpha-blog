@@ -21,9 +21,16 @@
     </div>
   </div>
   <div class="row text-center">
+  <% if @category.id != nil %>
+  <%= link_to "[ Back to Category ]",
+              category_path(@category),
+              method: :get,
+              class: "text-info mb-3" %>
+                <% else %>
     <%= link_to "[ Back to Articles ]",
                 articles_path,
                 method: :get,
                 class: "text-info mb-3" %>
+                <% end %>
   </div>
 </div>
